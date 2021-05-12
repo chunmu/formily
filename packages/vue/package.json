@@ -1,0 +1,60 @@
+{
+  "name": "@formily/vue",
+  "version": "2.0.0-beta.44",
+  "license": "MIT",
+  "main": "lib",
+  "module": "esm",
+  "umd:main": "dist/formily.vue.umd.production.js",
+  "unpkg": "dist/formily.vue.umd.production.js",
+  "jsdelivr": "dist/formily.vue.umd.production.js",
+  "jsnext:main": "esm",
+  "types": "lib/index.d.ts",
+  "engines": {
+    "npm": ">=3.0.0"
+  },
+  "scripts": {
+    "start": "vuepress dev docs",
+    "switch:vue3": "vue-demi-switch 3 vue3",
+    "switch:vue2": "vue-demi-switch 2",
+    "build": "npm run switch:vue3 && rimraf -rf lib esm dist && npm run build:cjs && npm run build:esm && npm run build:umd && npm run switch:vue2",
+    "build:cjs": "tsc --declaration",
+    "build:esm": "tsc --declaration --module es2015 --outDir esm",
+    "build:umd": "rollup --config",
+    "build:docs": "vuepress build docs"
+  },
+  "devDependencies": {
+    "@ant-design/icons": "^2.1.1",
+    "@ant-design/icons-vue": "^2.0.0",
+    "@vuepress-dumi/vuepress-plugin-dumi-previewer": "0.3.3",
+    "@vuepress-dumi/vuepress-theme-dumi": "0.3.3",
+    "@vuepress/plugin-back-to-top": "^1.8.2",
+    "@vuepress/plugin-medium-zoom": "^1.8.2",
+    "ant-design-vue": "^1.7.3",
+    "core-js": "^2.4.0",
+    "vue3": "npm:vue@3",
+    "vuepress": "^1.8.2"
+  },
+  "dependencies": {
+    "@formily/core": "2.0.0-beta.44",
+    "@formily/json-schema": "2.0.0-beta.44",
+    "@formily/reactive": "2.0.0-beta.44",
+    "@formily/reactive-vue": "2.0.0-beta.44",
+    "@formily/shared": "2.0.0-beta.44",
+    "@formily/validator": "2.0.0-beta.44",
+    "vue-demi": "^0.7.5",
+    "vue-frag": "^1.1.4"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.0.0-beta.1",
+    "vue": "^2.6.0 || >=3.0.0-rc.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "2c44ae410a73f02735c63c6430e021a50e21f3ec"
+}

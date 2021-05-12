@@ -1,0 +1,62 @@
+@import '~@alifd/next/lib/core/index-noreset.scss';
+
+$array-table-prefix-cls: '#{$css-prefix}formily-array-table';
+
+.#{$array-table-prefix-cls} {
+
+  .#{$array-table-prefix-cls}-pagination {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+
+    .#{$array-table-prefix-cls}-status-select {
+      min-width: 60px;
+      margin-right: 6px;
+      width: auto !important;
+      .#{$css-prefix}input {
+        min-width: 60px;
+      }
+
+      &.has-error {
+        .#{$css-prefix}input {
+          border-color: red !important;
+        }
+      }
+    }
+  }
+
+  .#{$css-prefix}table {
+    .#{$css-prefix}table-cell-wrapper {
+      overflow: visible;
+      word-break: normal;
+    }
+
+    td {
+      visibility: visible;
+
+      .#{$css-prefix}formily-item:not(.#{$css-prefix}formily-item-feedback-layout-popover) {
+        margin-bottom: 0 !important;
+        position: relative;
+
+        .#{$css-prefix}formily-item-help {
+          position: absolute;
+          font-size: 12px;
+          top: 100%;
+          background: #fff;
+          width: 100%;
+          margin-top: 3px;
+          padding: 3px;
+          z-index: 1;
+          border-radius: 3px;
+          box-shadow: 0 0 10px #eee;
+        }
+      }
+    }
+  }
+
+  .#{$array-table-prefix-cls}-sort-helper {
+    background: #fff;
+    border: 1px solid #eee;
+    z-index: 10;
+  }
+}
